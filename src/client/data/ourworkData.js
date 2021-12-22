@@ -15,4 +15,4 @@ const OUR_WORK_DATA = {
         './resources/Images/Work_section/work4.PNG'
     ]
 }
-export default OUR_WORK_DATA;
+export default OUR_WORK_DATA

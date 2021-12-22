@@ -1,19 +1,19 @@
 .banner{
-    height:cal(100vh - 81px);
+    height: calc(100vh - 74px);
+    top:74px;
+    position:relative;
 }
 .banner-content{
-    max-width: 860px;
-    
+    max-width: 670px;
 }
 .content-center{
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
 }
 .banner-button{
-    text-decoration-color:#0000;    
-    font-weight: bold;
-    background:#ffc72c;
+    color: #000;
+    background: #ffc72c;
     border-radius: 30px;
     padding: 1rem 5rem;
     margin-bottom: 3rem;

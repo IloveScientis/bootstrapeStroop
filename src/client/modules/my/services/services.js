@@ -1,4 +1,4 @@
-import {LightningElement} from 'lwc';
+import { LightningElement } from 'lwc';
 import SERVICES_DATA from '../../../data/servicesData'
 export default class Services extends LightningElement{
     servicesData = []

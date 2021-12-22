@@ -1,19 +1,34 @@
-import {LightningElement} from 'lwc';
-export default class Contactus extends LightningElement{
+import { LightningElement } from 'lwc';
+export default class Contactus extends LightningElement {
     formData={}
-    formHandler(event)
-    {
-        const {name,value}=event.target;
-        this.formData[name]=value;
+    formHandler(event){
+        const {name, value} = event.target
+        this.formData[name] = value
     }
-
     sendEmail(){
-        console.log(this.formData);
-        this.resetForm();
+        console.log(this.formData)
+        fetch('http://localhost:3002/api/v1/sendemail', {
+            method:'POST',
+            headers:{
+                'accept':'application/json',
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(this.formData)
+        }).then(response=>{
+            if(!response.ok){
+                throw new Error('No response from server')
+            }
+            return response.json()
+        }).then(result=>{
+            console.log("Message sent", result)
+            this.resetForm()
+        }).catch(error=>{
+            console.error(error)
+        })
+        
     }
-
     resetForm(){
-        const form= this.template.querySelector('form')
+        const form = this.template.querySelector('form')
         if(form){
             form.reset()
         }

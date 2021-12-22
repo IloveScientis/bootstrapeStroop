@@ -1,30 +1,45 @@
 {
-    "name": "salesforceconsultant",
+    "name": "salesforceconsulting",
+    "description": "My amazing LWC app",
     "version": "0.0.1",
-    "bugs": "https://github.com/salesforceconsultant/issues",
+    "author": "salesforcetroop",
+    "bugs": "https://github.com/jaiswalSomi/salesforceconsulting/issues",
     "dependencies": {
+        "body-parse": "^0.1.0",
+        "body-parser": "^1.19.0",
         "compression": "^1.7.4",
-        "express": "^4.17.2",
-        "helmet": "^4.6.0"
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "helmet": "^4.6.0",
+        "nodemailer": "^6.7.2"
     },
     "devDependencies": {
-        "eslint": "^8.5.0",
-        "eslint-plugin-inclusive-language": "^2.2.0",
-        "husky": "^7.0.4",
-        "lwc-services": "^3.2.2",
+        "eslint": "^7.27.0",
+        "husky": "^6.0.0",
+        "lint-staged": "^11.0.0",
+        "lwc-services": "^3.0.4",
         "npm-run-all": "^4.1.5",
-        "prettier": "^2.5.1"
+        "prettier": "^2.3.0"
     },
     "engines": {
         "node": ">=10.13.0",
         "npm": ">=6.4.1",
         "yarn": ">=1.9.4"
     },
-    "homepage": "https://github.com/salesforceconsultant",
+    "homepage": "https://github.com/jaiswalSomi/salesforceconsulting",
     "keywords": [
         "lwc"
     ],
     "license": "MIT",
+    "lint-staged": {
+        "**/*.{css,html,js,json,md,ts,yaml,yml}": [
+            "prettier --write"
+        ],
+        "./src/**/*.js": [
+            "eslint"
+        ]
+    },
     "nodemonConfig": {
         "watch": [
             "src/server/**/*.js"
@@ -36,18 +51,16 @@
         ],
         "exec": "node ./src/server/api.js"
     },
-    "repository": "salesforceconsultant",
+    "repository": "jaiswalSomi/salesforceconsulting",
     "scripts": {
         "build": "lwc-services build -m production",
         "build:development": "lwc-services build",
         "lint": "eslint ./src/**/*.js",
-        "postinstall": "husky install",
-        "precommit": "npm run prettier:verify && [ $? -eq 0 ] && npm run lint",
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
-        "start": "run-p start:client start:api",
-        "start:api": "node src/server/api.js",
-        "start:client": "node scripts/server.js",
+        "serve": "node src/server/api.js",
+        "serve:api": "node src/server/api.js",
+        "serve:client": "node scripts/server.js",
         "test:unit": "lwc-services test:unit",
         "test:unit:coverage": "lwc-services test:unit --coverage",
         "test:unit:debug": "lwc-services test:unit --debug",

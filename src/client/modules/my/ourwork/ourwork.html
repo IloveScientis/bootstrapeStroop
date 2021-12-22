@@ -7,7 +7,9 @@
             </div>
             <div class="row">
                 <div class="col-12 col-md-4">
-                    <img src="./resources/Images/Work_section/Our_Work.png" alt="our work lifecyle" class="img-fluid" width="100%" height="auto">
+                    <img src="./resources/Images/Work_section/Our_Work.png" alt="our work lifecycle"
+                    class="img-fluid" width="100%" height="auto"
+                    />
                 </div>
                 <div class="col-12 col-md-6 ms-auto">
                     <div class="pt-5">
@@ -21,16 +23,15 @@
                 </div>
             </div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
-                <template for:each ={ourworkData.images} for:item="image">
+                <template for:each={ourworkData.images} for:item="image">
                     <div class="col h-100" key={image}>
                         <div class="img-wrapper purple-gradient">
-                            <img loading="lazy" src={image} alt="image of our work" height="260px" width="100%"/>
-                        </div> 
-                      
+                            <img loading="lazy" src={image} alt="image of our work" height="225px" width="100%"/>
+                        </div>
+                        
                     </div>
                 </template>
             </div>
         </div>
-       
     </section>
 </template>
